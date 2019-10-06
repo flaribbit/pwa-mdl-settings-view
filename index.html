@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="js/vue.js"></script>
+    <script src="js/material.js"></script>
+    <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" href="css/material.blue-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <style>
+        .movie_img {
+            width: 100%;
+            height: auto;
+        }
+        .item_title {
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+    <div class="demo-layout-waterfall mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall">
+            <!-- Top row, always visible -->
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">正在热映</span>
+                <span class="mdl-layout-spacer"></span>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                                  mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample" id="waterfall-exp">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="mdl-layout__content" id="app">
+            <div class="mdl-grid" v-for="item in items">
+                <div class="mdl-cell mdl-cell--3-col">
+                    <img class="movie_img" :src="item.image">
+                </div>
+                <div class="mdl-cel">
+                    <div class="mdl-grid">
+                        <div class="item_title">{{item.title}}</div>
+                    </div>
+                    <div class="mdl-grid">
+                        <div>评分：{{item.rating}}</div>
+                    </div>
+                    <div class="mdl-grid">
+                        <div>主演：{{item.actors}}</div>
+                    </div>
+                    <div class="mdl-grid">
+                        <div>年份：{{item.year}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                222
+            </div>
+        </main>
+    </div>
+    <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    items: [
+                        {
+                            image: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2567998580.webp",
+                            title: "2",
+                            rating: "2",
+                            year: 2019
+                        }
+                    ]
+                }
+            })
+        </script>
+</body>
