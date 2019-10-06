@@ -39,6 +39,6 @@ server.on("request",function(req,res){
         }
     })
 })
-server.listen(80, function() {
-    console.log("server start 80");
+server.listen(3000, function() {
+    console.log("server start 3000");
 });
