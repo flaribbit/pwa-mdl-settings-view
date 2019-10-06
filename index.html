@@ -3,6 +3,7 @@
 <head>
     <script src="js/vue.js"></script>
     <script src="js/material.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
     <link rel="stylesheet" href="css/material.blue-pink.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -63,18 +64,13 @@
         </main>
     </div>
     <script>
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    items: [
-                        {
-                            image: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2567998580.webp",
-                            title: "2",
-                            rating: "2",
-                            year: 2019
-                        }
-                    ]
-                }
-            })
-        </script>
+        var app = new Vue({el: '#app',
+            data: {
+                items: []
+            }
+        });
+        $.getJSON("localhost",data=>{
+            
+        })
+    </script>
 </body>
