@@ -26,6 +26,7 @@ server.on("request",function(req,res){
                     directors.push(director["name"])
                 }
                 data.push({
+                    image: item["images"]["small"],
                     title: item["title"],
                     rating: item["rating"]["average"],
                     year: item["year"],
