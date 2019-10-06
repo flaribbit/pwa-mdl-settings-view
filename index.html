@@ -13,6 +13,9 @@
 
 <body>
     <style>
+        .mdl-layout__header-row{
+            padding: 0 16px;
+        }
         .movie_img {
             width: 100%;
             height: auto;
@@ -20,6 +23,12 @@
         .item_title {
             color: black;
             font-size: 20px;
+        }
+        .item_left{
+            width: 40%;
+        }
+        .item_right{
+            width: calc(60% - 32px);
         }
     </style>
     <div class="demo-layout-waterfall mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -42,10 +51,10 @@
         </header>
         <main class="mdl-layout__content" id="app">
             <div class="mdl-grid" v-for="item in items">
-                <div class="mdl-cell mdl-cell--2-col">
+                <div class="mdl-cell item_left">
                     <img class="movie_img" :src="item.image">
                 </div>
-                <div class="mdl-cel mdl-cell--2-col">
+                <div class="mdl-cell item_right">
                     <div class="mdl-grid">
                         <div class="item_title">{{item.title}}</div>
                     </div>
