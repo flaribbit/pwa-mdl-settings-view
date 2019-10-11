@@ -57,6 +57,7 @@
         .text_setting_box{
             padding: 4px 8px;
             margin: 0;
+            align-items:center;
             width: calc(100% - 76px);
         }
         .switch_box{
@@ -106,15 +107,15 @@
             </div>
             <div class="mdl-grid">
                 <div class="mdl-color-text--primary mdl-typography--font-bold text_setting_head">
-                    Automatic media download
+                    Auto-play media
                 </div>
                 <!-- 一个设置项 -->
-                <div class="mdl-grid item_setting" v-for="setting in settings">
+                <div class="mdl-grid item_setting" v-for="setting in settings2">
                     <div class="mdl-grid text_setting_box">
                         <div class="mdl-grid text_setting_left">
                             {{setting.title}}
                         </div>
-                        <div class="mdl-grid text_setting_left2">
+                        <div class="mdl-grid text_setting_left2" v-if="setting.desc">
                             {{setting.desc}}
                         </div>
                     </div>
@@ -140,6 +141,12 @@
                     title: "When roaming",
                     desc: "Photos"
                 }],
+                settings2: [{
+                    title: "GIFs",
+                    desc: "GIFs are different from videos"
+                },{
+                    title: "Videos"
+                }]
             }
         });
         // $.getJSON("https://demoapp-server.herokuapp.com/",data=>{
